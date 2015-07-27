@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Examples of decorators
 """
@@ -12,6 +13,7 @@ def identity_decorator(decorated_func):
     """
     return decorated_func
 
+
 def double_decorator(decorated_func):
     """
     Doubles the result of the original function call
@@ -25,6 +27,7 @@ def double_decorator(decorated_func):
         return final_result
     return replacement_function
 
+
 def parameterized_decorator(_param):
     """
     This decorator is actually a function which generates a decorator
@@ -35,13 +38,15 @@ def parameterized_decorator(_param):
     which takes the decorated function in the calling code.
     The second is the implementation of the decorating function itself.
     """
-    def decorator(decorated_func): 
-         """
-         The parameter is expected to be an integer
-         """
-         def replacment_function(_int):
-             interim_result = decorated_func(_int) 
-             final_result = _param * interim_result  
-             return final_result
-         return replacment_function
+    def decorator(decorated_func):
+        """
+        The parameter is expected to be an integer
+        """
+        def replacment_function(_int):
+            interim_result = decorated_func(_int)
+            final_result = _param * interim_result
+            return final_result
+        return replacment_function
     return decorator
+
+# TODO just a test for print_todos.sh

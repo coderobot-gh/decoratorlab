@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Test decorators
 """
@@ -20,7 +21,7 @@ class Test(unittest.TestCase):
         result = decorated_function(3)
         self.assertEqual(result, 3)
 
-    def test_identity_decorator(self):
+    def test_double_decorator(self):
         @decorators.double_decorator
         def decorated_function(_int):
             return _int
@@ -33,7 +34,6 @@ class Test(unittest.TestCase):
             return _int
         result = decorated_function(3)
         self.assertEqual(result, 15)
-
 
 
 if __name__ == "__main__":
